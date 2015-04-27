@@ -21,7 +21,7 @@
 - Create three variables inside your script tag
 	- Create a variable `firstName`, set it to your first name
 	- Create a variable `lastName`, set it to your last name
-	- create a variable `age`, set it to your name
+	- create a variable `age`, set it to your age
 
 ## Step - 5
 - Using `console.log()` in your script tag log out a string as follows
