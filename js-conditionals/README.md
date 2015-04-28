@@ -39,7 +39,9 @@ Between your script tags create the following variables
 #### Create output
 
 Use `console.log()` to create the following outputs<br>
-**Note** - Use actual comparisons to generate the true/false part of the output
+**Note** - Use actual comparisons to generate the true/false part of the output 
+		 - You will need to use concatenation to achieve the proper output
+		 - Example: `console.log("my string " + (x == z))`
 
 1. Output 1: `"mySmallNumber == myString is true"`
 2. Output 2: `"mySmallNumber === myString is false"`
