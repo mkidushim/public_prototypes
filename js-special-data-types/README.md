@@ -4,11 +4,11 @@
 
 ### Getting Started
 
-1. make an index.html 
+1. make an index.html inside the `js-special-data-types` folder
 
-2. Create a basic html DOM structure
+2. Create a basic HTML DOM structure
 	- DOCTYPE tag
-	- html tag
+	- HTML tag
 	- head tag
 	- body tag
 
@@ -20,10 +20,10 @@
 
 Inside your script tags create the following variables
 
-1. Create a variable `x`, set it to null
-2. Create a variable `y`, don't set it to anything
+1. Declare a variable `x`, set the value to null
+2. Declare a variable `y`, don't set the value to anything
 	- Example: `var y;`
-3. Create a variable `z`, set it to a string
+3. Declare a variable `z`, set the value to any string
 
 
 #### Create some output
