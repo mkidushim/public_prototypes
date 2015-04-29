@@ -1,0 +1,59 @@
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+body {
+	text-align: center;
+}
+
+div {
+	border: 3px solid black;
+	border-radius: 8px;
+	display: inline-block;
+	font-size: 40px;
+	height: 200px;
+	margin: 15px;
+	padding-top: 60px;
+	width: 200px;
+}
+
+.blue {
+	background-color: blue;
+}
+
+.green {
+	background-color: green;
+}
+
+.red {
+	background-color: red;
+}
+
+.pink {
+	background-color: pink;
+}
+
+.card-back {
+	background-image: url("images/card_design.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.flag {
+	background-image: url("images/british_flag.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.path {
+	background-image: url("images/optional_path.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
