@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+    var animals = ['dog', 'monkey', 'cat', 'bird'];
+    console.log('My favorite kind of animal is a ', animals[0]);
+    var student = {};
+    student.firstName = "Mike";
+    student.lastName = "Kidushim";
+    student.age = 25;
+    student.school = "Sonoma State University";
+    student.classList = ['classone', 'classtwo', 'classthree'];
+    student.fullName = student.firstName + ' ' + student.lastName;
+    student.greeting = function greeting() {
+        return 'Hello, your name is ' + student.fullName;
+    }
+    student.aboutMe = function aboutMe() {
+        return "My full name is" + " " + student.fullName + ", I am" + " " + student.age + "years old and I am a student at" + " " + student.school + ".";
+    }
+    student.myClasses = function myClasses() {
+        for (var i = 0; i < student.classList.length; i++) {
+
+
+        }
+        return "I am taking the following classes:" + " " + student.classList;
+    }
+    </script>
+    <title></title>
+</head>
+
+<body>
+</body>
+
+</html>
