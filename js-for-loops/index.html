@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>for-loops</title>
+    <script type="text/javascript">
+    var myArray = ['tiger', 'lion', 'jaguar'];
+    var mixedArray = [4, 56, 11, 13, 97, 22, 7, 36, 19, 5, 8, 10];
+    var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    var seats = {
+        seat1: 'stu',
+        seat2: 'Peggy',
+        seat3: 'LoneStar',
+        seat4: 'George',
+        seat5: 'Mike'
+    };
+
+
+
+
+    for (var i = 0; i < myArray.length; i++) {
+        console.log(myArray[i]);
+        console.log('i is equal to: ' + i);
+    }
+    for (var i = 1; i < numbers[10]; i++) {
+
+        console.log(i);
+    }
+    for (var i = 10; i > 0; i--) {
+        console.log(i);
+    }
+    for (var i = 0; i < numbers.length; i = i + 2) {
+        console.log(numbers[i])
+    }
+    for (var i = 0; i < mixedArray.length; i++) {
+        console.log(mixedArray[i])
+    }
+    for (var names in seats) {
+        console.log(seats[names] + ' is in ' + names)
+    }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
