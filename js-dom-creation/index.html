@@ -1,89 +1,134 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <style>
+    .playground {
+        margin: 2%;
+        min-height: 50vh;
+    }
+    
+    .playground_source {
+        background-color: lavender;
+    }
+    
+    .playground_destination {
+        background-color: lightyellow;
+    }
+    
+    .awesome_class {
+        text-shadow: 1px 1px red;
+        font-weight: bold;
+    }
+    
+    .neato {
+        padding: 1%;
+    }
+    
+    .neato > li {
+        margin: 0px 1%;
+        padding: 0px;
+        list-style-type: none;
+        display: inline-block;
+    }
+    
+    .awesome_picture {
+        display: inline-block;
+    }
+    
+    .awesome_picture > figcaption {
+        text-align: center;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 120%;
+    }
+    
+    .red {
+        color: red;
+    }
+    </style>
+    <script>
+    $(document).ready(function() {
+        var dest_1 = $('#playground1');
+        var dest_2 = $('#playground2');
+        var dest_3 = $('#playground3')
 
-.playground{
-	margin: 2%;
-	min-height: 50vh;
-}
-.playground_source{
-	background-color: lavender;
-}
-.playground_destination{
-	background-color: lightyellow;
-}
-.awesome_class{
-	text-shadow: 1px 1px red;
-	font-weight: bold;
-}
-.neato{
-	padding: 1%;
-}
-.neato > li{
-	margin: 0px 1%;
-	padding: 0px;
-	list-style-type: none;
-	display: inline-block;
-}
-.awesome_picture{
-	display:inline-block;
-}
-.awesome_picture > figcaption{
-	text-align: center;
-	font-weight: bold;
-	font-style: italic;
-	font-size:120%;
-}
-</style>
-<script>
-$(document).ready(function()
-{
-	//playground 1 code
+        var h1 = $('.playground.playground_source > h1').html();
+        var m_h1 = $('<h1>I am a heading</h1>')
+        var m_p = $("<p>This is an awesome paragraph</p>")
+        var m_p_style = $("<p class='red'>This had red text</p>").addClass('color:', 'red');
 
-	//playground 2 code
 
-	//playground 3 code
-});
-</script>
+        dest_1.append(m_h1, m_p, m_p_style);
+
+        //playground 2 code
+
+        var div_1 = $("<div>Here is some awesome div text</div>");
+        var div_2 = $("<div id='my_awesome_div2'>Here is MORE awesome div text</div>");
+        var div_3 = $("<div id='my_awesome_div3', data-coolness='high'>Here is <strong>EVEN MORE</strong> awesome div text</div>");
+
+        dest_2.append(div_1).addClass('awesome_class');
+        dest_2.append(div_2).addClass('awesome_class');
+        dest_2.append(div_3).addClass('awesome_class');
+
+        //playground 3 code
+        var ul_1 = $("<ul class= 'neato'></ul>")
+        var li_1 = $("<li>Link 1</li>");
+        var li_2 = $("<li>Link 2</li>");
+        var li_3 = $("<li>Link 3</li>");
+        var pic_box = $("<figure class='awesome_picture'></figure>")
+        var pic = $("<img src='http://comerecommended.com/wp-content/uploads/2013/01/how-to-get-awesome-back.jpg'>");
+        var caption = $("<figcaption> That's right, <span class='bold_text'>you are</span></figcaption>")
+
+        dest_3.append(ul_1);
+        ul_1.append(li_1);
+        ul_1.append(li_2);
+        ul_1.append(li_3);
+        dest_3.append(pic_box);
+        pic_box.append(pic, caption);
+
+
+    });
+    </script>
 </head>
+
 <body>
-	<div class="playground playground_source">
-		<h1>I am a heading</h1>
-		<p>This is an awesome paragraph</p>
-		<p style="color:red">This has red text</p>
-	</div>
-	<div class="playground playground_destination" id="playground1">
-		<!--copy code into here using jQuery ONLY-->
-	</div>
-	<div class="playground playground_source">
-		<div class='awesome_class'>
-			Here is some awesome div text
-		</div>
-		<div class='awesome_class' id='my_awesome_div2'>
-			Here is MORE awesome div text
-		</div>
-		<div class='awesome_class' id='my_awesome_div3' data-coolness='high'>
-			Here is <strong>EVEN MORE</strong> awesome div text
-		</div>
-	</div>
-	<div class="playground playground_destination" id="playground2">
-		<!--copy code into here using jQuery ONLY-->
-	</div>
-	<div class="playground playground_source">
-		<ul class="neato">
-			<li>Link 1</li>
-			<li>Link 2</li>
-			<li>Link 3</li>
-		</ul>
-		<figure class="awesome_picture">
-			<img src="http://comerecommended.com/wp-content/uploads/2013/01/how-to-get-awesome-back.jpg">
-			<figcaption>That's right, <span class="bold_text">you are</span></figcaption>
-		</figure>
-	</div>
-	<div class="playground playground_destination" id="playground3">
-		<!--copy code into here using jQuery ONLY-->
-	</div>
+    <div class="playground playground_source">
+        <h1>I am a heading</h1>
+        <p>This is an awesome paragraph</p>
+        <p id="p" style="color:red">This has red text</p>
+    </div>
+    <div class="playground playground_destination" id="playground1">
+        <!--copy code into here using jQuery ONLY-->
+    </div>
+    <div class="playground playground_source">
+        <div class='awesome_class'>
+            Here is some awesome div text
+        </div>
+        <div class='awesome_class' id='my_awesome_div2'>
+            Here is MORE awesome div text
+        </div>
+        <div class='awesome_class' id='my_awesome_div3' data-coolness='high'>
+            Here is <strong>EVEN MORE</strong> awesome div text
+        </div>
+    </div>
+    <div class="playground playground_destination" id="playground2">
+        <!--copy code into here using jQuery ONLY-->
+    </div>
+    <div class="playground playground_source">
+        <ul class="neato">
+            <li>Link 1</li>
+            <li>Link 2</li>
+            <li>Link 3</li>
+        </ul>
+        <figure class="awesome_picture">
+            <img src="http://comerecommended.com/wp-content/uploads/2013/01/how-to-get-awesome-back.jpg">
+            <figcaption>That's right, <span class="bold_text">you are</span></figcaption>
+        </figure>
+    </div>
+    <div class="playground playground_destination" id="playground3">
+        <!--copy code into here using jQuery ONLY-->
+    </div>
 
 </html>
