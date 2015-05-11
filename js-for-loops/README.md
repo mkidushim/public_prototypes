@@ -44,7 +44,7 @@ To get these files to your local machine you will need to do the following
 #### More array looping fun!
 
 1. Create the **exact** following array
-	- `var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];`
+	- `var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];`
 2. Using a `for` loop, output **all** the numbers in **ascending** order, `1-10`
 3. Save your work and test your code
 4. Using the same array from above write a different `for` loop that outputs **all** the numbers in **descending** order, `10-1`

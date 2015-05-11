@@ -1,7 +1,5 @@
 # Prototypes
 
-accuracy 
-
 ## Javascript - Reference Data Types
 
 To get these files to your local machine you will need to do the following
