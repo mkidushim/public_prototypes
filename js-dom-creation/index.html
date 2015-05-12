@@ -52,15 +52,15 @@
     $(document).ready(function() {
         var dest_1 = $('#playground1');
         var dest_2 = $('#playground2');
-        var dest_3 = $('#playground3')
-
-        var h1 = $('.playground.playground_source > h1').html();
-        var m_h1 = $('<h1>I am a heading</h1>')
-        var m_p = $("<p>This is an awesome paragraph</p>")
-        var m_p_style = $("<p class='red'>This had red text</p>").addClass('color:', 'red');
+        var dest_3 = $('#playground3');
 
 
-        dest_1.append(m_h1, m_p, m_p_style);
+        var h1 = $('<h1>I am a heading</h1>')
+        var p = $("<p>This is an awesome paragraph</p>")
+        var p_style = $("<p class='red'>This had red text</p>").addClass('color:', 'red');
+
+
+        dest_1.append(h1, p, p_style);
 
         //playground 2 code
 
@@ -77,6 +77,9 @@
         var li_1 = $("<li>Link 1</li>");
         var li_2 = $("<li>Link 2</li>");
         var li_3 = $("<li>Link 3</li>");
+
+
+
         var pic_box = $("<figure class='awesome_picture'></figure>")
         var pic = $("<img src='http://comerecommended.com/wp-content/uploads/2013/01/how-to-get-awesome-back.jpg'>");
         var caption = $("<figcaption> That's right, <span class='bold_text'>you are</span></figcaption>")
