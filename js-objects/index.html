@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Objects</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript">
+var student_array = [];
+var student = {
+    name: 'Mike',
+    grade: 95
+};
+var num = 1;
+
+function add_student() {
+    var new_Name = prompt('What is your first name?');
+    var new_grade = parseFloat(prompt('What grade do you have?'));
+    student_object = {
+        name: new_Name,
+        grade: new_grade
+    }
+    student_array.push(student_object)
+    console.log(student_array)
+
+}
+
+function student_delete() {
+    var id_num = prompt('What is your ID number?');
+    student_array[id_num].pop();
+}
+
+
+
+
+$(document).ready(function() {
+    $('body').on('click', '.create', function() {
+        console.log('worked')
+        add_student();
+        student_array.push(student);
+        console.log(student_array)
+
+    });
+    $('body').on('click', '.refresh', function() {
+        list_students();
+        console.log('works')
+
+    })
+
+    $('body').on('click', '.delete', function() {
+        student_delete();
+    })
+
+    function list_students() {
+        var display = $('.display');
+        console.log(student_array)
+        for (var i = 0; i < student_array.length; i++) {
+
+
+            var student_display = num + ') ' + student_array[i].name + '-' + student_array[i].grade + ' ';
+            num += 1;
+            display.append(student_display)
+        }
+
+    }
+});
+</script>
+
+<body>
+    <button class="create">create student</button>
+    <button class="refresh">Refresh Student Data</button>
+    <button class="delete">Delete</button>
+    <div class="display"></div>
+</body>
+
+</html>
