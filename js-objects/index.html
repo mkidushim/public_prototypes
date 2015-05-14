@@ -14,22 +14,22 @@ var student = {
 var num = 1;
 
 function add_student() {
-    var new_Name = prompt('What is your first name?');
-    var new_grade = parseFloat(prompt('What grade do you have?'));
-    student_object = {
-        name: new_Name,
-        grade: new_grade
+        var new_Name = prompt('What is your first name?');
+        var new_grade = parseFloat(prompt('What grade do you have?'));
+        student_object = {
+            name: new_Name,
+            grade: new_grade
+        }
+        student_array.push(student_object)
+        console.log(student_array)
+
     }
-    student_array.push(student_object)
-    console.log(student_array)
-
-}
-
+    //student_delete does not work yet 
 function student_delete() {
-    var id_num = prompt('What is your ID number?');
-    student_array[id_num].pop();
-}
-
+        var id_num = prompt('What is your ID number?');
+        student_array[id_num].pop();
+    }
+    //
 
 
 
@@ -45,10 +45,11 @@ $(document).ready(function() {
         list_students();
         console.log('works')
 
-    })
+    });
 
     $('body').on('click', '.delete', function() {
         student_delete();
+        console.log("works")
     })
 
     function list_students() {
@@ -59,7 +60,7 @@ $(document).ready(function() {
 
             var student_display = num + ') ' + student_array[i].name + '-' + student_array[i].grade + ' ';
             num += 1;
-            display.append(student_display)
+            display.append("<div class='col-md-9'>" + student_display + "</div>");
         }
 
     }
@@ -67,10 +68,12 @@ $(document).ready(function() {
 </script>
 
 <body>
-    <button class="create">create student</button>
-    <button class="refresh">Refresh Student Data</button>
-    <button class="delete">Delete</button>
-    <div class="display"></div>
+    <div class="container">
+        <button class="create">create student</button>
+        <button class="refresh">Refresh Student Data</button>
+        <button class="delete">Delete</button>
+        <div class="display"></div>
+    </div>
 </body>
 
 </html>
