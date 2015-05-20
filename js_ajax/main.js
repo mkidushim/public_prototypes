@@ -6,7 +6,27 @@ $(document).ready(function(){
 			url: 'http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topMovies/json',
 			success: function(result){
 				console.log('loaded',result);
+				window.result = result;
+				console.log('result2: ', window.result)
+				for (var i = 0; i < window.result.feed.entry.length-1; i++){
+					var third_img_movie = window.result.feed.entry[i]['im:image'][2].label;
+					var m_name = window.result.feed.entry[i].title.label;
+					console.log('third_img_movie:', third_img_movie)
+					var container = $('<figure>',{
+						class: 'col-md-1'
+					})
+					var image = $('<img>',{
+					src: third_img_movie
 
+					})
+					var title = $('<figcaption>',{
+					text: m_name
+					})
+
+					$(container).append(image).append(title);
+					$('#main').append(container)
+
+				}
 			}
 		});
 	});
