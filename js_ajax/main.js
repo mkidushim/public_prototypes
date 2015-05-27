@@ -29,7 +29,10 @@ $(document).ready(function(){
 					
 
 				}
+				global_response = result;	
+
 			}
 		});
 	});
 });
+
