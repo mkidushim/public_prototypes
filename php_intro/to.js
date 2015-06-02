@@ -26,7 +26,7 @@ console.log(“This is a string” + “This is another string”);
 var my_float = 3.5;
 var my_int = Math.floor(my_float);
 var my_float2 = 5.3;
-var my_int2 = Math.floor(my_float2);
+var my_int2 = parseInt(my_float2);
 
 
 
