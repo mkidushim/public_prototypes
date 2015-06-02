@@ -83,38 +83,39 @@ $student->grade = 75;
 
 //EXERCISE 10
 
-var num_array = [35, 2, 14, 56, 65, 52];
+$num_array = [35, 2, 14, 56, 65, 52];
 
-function find_greatest_num_and_index(direction)
+function find_greatest_num_and_index($direction)
 {
-    var greatest = null;
-    var greatest_index = null;
-    if(direction >= 0)
+    $greatest = null;
+    $greatest_index = null;
+   global $num_array;
+    if($direction >= 0)
     {
-        var i = 0;
-        var increment = 1;
-        var end_loop = num_array.length;
+        
+        $i = 0;
+        $increment = 1;
+        $end_loop = count($num_array);
     }
     else
     {
-        var i = num_array.length;
-        var increment = -1;
-        var end_loop = 0;
+        $i = count( $num_array);
+        $increment = -1;
+        $end_loop = 0;
     }
 
-    while( i !=end_loop)
+    while( $i != $end_loop)
     {
-        if( num_array[i] > greatest )
+        if( $num_array[$i] > $greatest )
         {
-            greatest = num_array[i];
-            greatest_index = i;
+            $greatest = $num_array[$i];
+            $greatest_index = $i;
         }
-        i+= increment;
+        $i += $increment;
     }
-    return {greatest : greatest, 
-        greatest_index : greatest_index;
-    };
+    return ["greatest" => "$greatest",
+            "greatest_index" => "$greatest_index"
+];
 }
-
-find_greatest_num_and_index(1);
+print_r(find_greatest_num_and_index(1));
 ?>
