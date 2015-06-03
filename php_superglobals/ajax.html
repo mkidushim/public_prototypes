@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#ajax').click(function() {
+            ajax_function();
+        })
+
+        function ajax_function() {
+            $.ajax({
+                url: 'index.php',
+                method: 'POST',
+                data: {
+
+                },
+                dataType: 'text',
+                success: function(response) {
+                    window.response = response;
+                    console.log(response);
+                }
+            });
+
+        }
+    })
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="checkbox" value="howdy">howdy
+        <textarea></textarea>
+        <button id="ajax">Click</button>
+    </form>
+</body>
+
+</html>
