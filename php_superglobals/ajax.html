@@ -2,38 +2,42 @@
 <html>
 
 <head>
-    <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <title></title>
     <script type="text/javascript">
-    $(document).ready(function() {
-        $('#ajax').click(function() {
-            ajax_function();
-        })
-
-        function ajax_function() {
-            $.ajax({
-                url: 'index.php',
-                method: 'POST',
-                data: {
-
-                },
-                dataType: 'text',
-                success: function(response) {
+    $(document).ready(function(){
+        $('#btn').click(function(){
+            btn_click()
+        });
+    })
+    function btn_click(){
+        console.log('hello')
+        $.ajax({
+            url: 'index.php',
+            method: 'POST',
+            data: {
+                input: $('#radio').val(),
+                text_area: $('#t_a').val()
+            },
+            dataType: 'text',
+            success: function(response) {
+                if (response) {
                     window.response = response;
                     console.log(response);
+                } else if (!response) {
+                    console.log('error')
                 }
-            });
-
-        }
-    })
+            }
+        });
+   }
     </script>
 </head>
 
 <body>
     <form>
-        <input type="checkbox" value="howdy">howdy
-        <textarea></textarea>
-        <button id="ajax">Click</button>
+        <input id="radio" type="checkbox" value="howdy">howdy
+        <textarea id="t_a"></textarea>
+        <button id="btn" type="button">Click</button>
     </form>
 </body>
 
