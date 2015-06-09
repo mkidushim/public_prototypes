@@ -19,7 +19,7 @@
 	- if any data has an error, 
 		- save it to an array inside $_SESSION called "errors"
 	- use the header() PHP function to redirect the page back to session_setter.php
-		- header('session_setter.php');  
+		- header('location: session_setter.php');  
 		- make sure that you do not print anything before calling header or it won't work
 - in session_setter.php
 	- underneath each input, print the corresponding error message IF IT IS SET
