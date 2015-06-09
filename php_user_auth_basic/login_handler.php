@@ -16,10 +16,12 @@ foreach ($user_info as $key => $value) {
 		}
 		else{
 			$output['success'] = false;
+			$output['errors'] = 'invalid password';
 		}
 	}
 	else {
-		$output['success'] = true;
+		$output['success'] = false;
+		$output['errors'] = 'invalid username and/or password';
 	};
 }
 

@@ -36,12 +36,12 @@ function ajax_call() {
 			method: "POST",
 			dataType: 'JSON',
 			success: function(response){
-				window.global_result = response;
 				if(response.success == true){
 					console.log('result is true',response)
 				}
 				else if (response.success == false){
-					console.log(response)
+					console.log('error: ', response.errors)
+					
 				}
 			}
 		});
