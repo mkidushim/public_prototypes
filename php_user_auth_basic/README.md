@@ -14,13 +14,13 @@
 			- Check response for the word "true" or "false"
 - Create a new file, login_handler.php
 	- Create a nested associative array: $user_info
-		```
-		<pre>
+	- 
+
 		$user_info = [
 			['id'=> 0, 'username'=>'dpaschal', 'password' => 'fluffybunnies']
 		];
-		</pre>
-		```
+
+		
 	- get the data you received from your login_form.php
 	- loop through the array till you find a matching username. 
 	- Once you get the correct record, check the password within that record
@@ -43,3 +43,19 @@
 - In login_form.php
 	- change dataType to 'json'
 	- in the success handler, handle the incoming json data to inform the user of success or failure
+	
+## Prototype 3
+
+- in phpfiddle
+	- use sha1 to encrypt your password
+	- sha1([YOUR PASSWORD])
+	- for example:
+		- $encrypted_pass = sha1('fluffybunnies');
+		- print($encrypted_pass);
+		- // outputs 2beb0192eb1ca5a8756bc89a09b93036e1854049
+- in login_handler.php
+	- update the password in your $user_info array to use sha1()
+	- Validate your user using sha1()
+		
+		`$user_info = [['id'=> 0, 'username'=>'dpaschal', 'password' => '2beb0192eb1ca5a8756bc89a09b93036e1854049']];`
+
