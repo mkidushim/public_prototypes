@@ -1,11 +1,11 @@
 <?php 
 
 $user_info = [
-["username" => 'shibby', "password" => 'test', 'id'=> 0]
+["username" => 'shibby', "password" => 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'id'=> 0]
 ];
 $output = [];
 $user = $_POST['username'];
-$pass = $_POST['password'];
+$pass = sha1($_POST['password']);
 //print_r($user_info);
 foreach ($user_info as $key => $value) {
 	if ($value['username'] == $user) {
