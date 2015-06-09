@@ -1,5 +1,5 @@
 <?php
-//header('location: session_setter.php');
+header('location: session_setter.php');
 session_start();
 print_r($_POST);
 $_SESSION = $_POST;
@@ -30,7 +30,7 @@ foreach ($_SESSION as $key => $value) {
 			if(preg_match('/^[a-zA-Z]{2,}$/', $_SESSION['occupation']) != 1){
 				print('error input occupation wrong');
 				$_input = 'error input occupation wrong';
-				array_push($_SESSION["errors"], 'error input age wrong');
+				array_push($_SESSION["errors"], 'error input occupation wrong');
 				//print($_SESSION['errors']);
 				break;
 			}
