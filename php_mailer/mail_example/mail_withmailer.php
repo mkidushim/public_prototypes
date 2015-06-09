@@ -1,5 +1,6 @@
 <?php
-require_once('emailconfig.php');
+
+require_once('email_config.php');
 require('phpmailer/PHPMailer/PHPMailerAutoload.php');
 $mail = new PHPMailer;
 $mail->SMTPDebug = 3;                               // Enable verbose debug output
@@ -21,11 +22,11 @@ $options = array(
     )
 );
 $mail->smtpConnect($options);
-$mail->From = 'daniel.paschal@learningfuze.com';
-$mail->FromName = 'Daniel Paschal';
-$mail->addAddress('daniel.paschal@learningfuze.com', 'Daniel');     // Add a recipient
+$mail->From = 'mkidushim@gmail.com';
+$mail->FromName = 'Mike Kidushim';
+$mail->addAddress('mkidushim@gmail.com', 'Mike');     // Add a recipient
 //$mail->addAddress('ellen@example.com');               // Name is optional
-$mail->addReplyTo('daniel.paschal@learningfuze.com', 'Dan');
+$mail->addReplyTo('mkidushim@gmail.com', 'Mike');
 //$mail->addCC('cc@example.com');
 //$mail->addBCC('bcc@example.com');
 
@@ -34,6 +35,7 @@ $mail->addReplyTo('daniel.paschal@learningfuze.com', 'Dan');
 $mail->isHTML(true);                                  // Set email format to HTML
 
 $mail->Subject = 'Here is the subject';
+$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
 $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
