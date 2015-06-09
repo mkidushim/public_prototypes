@@ -3,24 +3,26 @@
 $user_info = [
 ["username" => 'shibby', "password" => 'test', 'id'=> 0]
 ];
+$output = [];
 $user = $_POST['username'];
 $pass = $_POST['password'];
-print_r($user_info);
+//print_r($user_info);
 foreach ($user_info as $key => $value) {
 	if ($value['username'] == $user) {
 		if ($value['password'] == $pass){
 			$_SESSION['user_id']= $value['id'];
-			print('user info matches');
+			$output['success'] = true;
+			$output['user_id'] = $value['id'];
 		}
 		else{
-			print('user info does not match');
-		session_unset();
+			$output['success'] = false;
 		}
 	}
 	else {
-		print('user info does not match');
-		session_unset();
+		$output['success'] = true;
 	};
 }
 
+$output_string = json_encode($output);
+print($output_string);
 ?>

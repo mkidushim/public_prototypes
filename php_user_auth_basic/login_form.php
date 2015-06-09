@@ -17,26 +17,6 @@ session_start();
 </form>
 </body>
 <script type="text/javascript">
-function ajax_call() {
-	$.ajax({
-			url: 'login_handler.php',
-			data: {
-				username: $('#user').val(),
-				password: $('#pass').val()
-			},
-			method: "POST",
-			dataType: 'text',
-			success: function(response){
-				window.global_result = response;
-				if(response){
-					console.log('result is true',response)
-				}
-				else if (response == false){
-					console.log(response)
-				}
-			}
-		});
-}
 $(document).ready(function(){
 
 	$('form').on('click','#btn', function(){
@@ -46,5 +26,25 @@ $(document).ready(function(){
 	})
 
 })
+function ajax_call() {
+	$.ajax({
+			url: 'login_handler.php',
+			data: {
+				username: $('#user').val(),
+				password: $('#pass').val()
+			},
+			method: "POST",
+			dataType: 'JSON',
+			success: function(response){
+				window.global_result = response;
+				if(response.success == true){
+					console.log('result is true',response)
+				}
+				else if (response.success == false){
+					console.log(response)
+				}
+			}
+		});
+}
 	</script>
 </html>
