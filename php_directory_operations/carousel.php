@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<title></title>
 <script type="text/javascript">
 var current_img_index = 0;
@@ -43,9 +46,11 @@ function prev (){
     if (current_img_index == 0){
         return
     }
- $('img').eq(current_img_index).animate({left: '100%'})
-    $('img').eq(current_img_index-1).animate({left: "0"})
-current_img_index--;
+    var prev_image_index = current_img_index-1;
+    img_array[prev_image_index].css({left: '-100%'})
+    img_array[current_img_index].animate({left: '100%'})
+    img_array[prev_image_index].animate({left: "0%"})
+    current_img_index= prev_image_index;
   /*
    var p = img_array.indexOf($('img').attr('src'));
    console.log('prev img:',p);
@@ -64,8 +69,10 @@ function next () {
     if(current_img_index == 6){
         return
     }
-    $('img').eq(current_img_index).animate({left: '100%'})
-    $('img').eq(current_img_index+1).animate({left: "0"})
+    var next_image_index = current_img_index+1;
+    img_array[next_image_index].css({left: '100%'})
+    img_array[current_img_index].animate({left: '-100%'})
+    img_array[next_image_index].animate({left: "0%"})
     /*
 $('img').eq(current_img_index).removeClass('img_show')
 $('img').eq(current_img_index).addClass('img_hidden')
@@ -75,7 +82,7 @@ $('img').eq(current_img_index+1).addClass('img_shown')
 img_array[current_img_index].animate({
     left: 100%;
 })*/
-current_img_index++;
+    current_img_index = next_image_index;
     /*
     var n = img_array.indexOf($('img').attr('src'));
     console.log('prev img:',n);
@@ -99,22 +106,18 @@ function intitialize (){
             success: function(response) {
                 //img_array = img_array.concat(response.files);
                 for(var i = 0; i < response.files.length; i++){
-                    img_array.push(response.files[i]);
-                if (i == 0) {
-                    var img = $('<img>',{
-                    src: response.files[i],
-                    class: 'img_shown'
-                    })
-                    $('#img_box').append(img)
-                }
-                else {
+                    //img_array.push(response.files[i]);
+
                 var img = $('<img>',{
-                src: response.files[i],
-                })
+                    src: response.files[i],
+                }); 
+                if (i == 0) {
+                    img.addClass('img_shown')
+                }
                 $('#img_box').append(img)
-                }
             
-                }
+                img_array.push(img);
+            }
             }
         })    
 }
@@ -133,6 +136,7 @@ $(document).ready(function(){
 </script>
 <style type="text/css">
 #img_box {
+    left: 18%;
     width: 800px;
     height: 600px;
     position: relative;
@@ -152,9 +156,9 @@ top: 0;
 </style>
 </head>
 <body>
-<button type="button" id="btn">update</button>
-<button id="btn_p" type="button">prev</button>
-<button id="btn_n" type="button">next</button>
-<div id="img_box"></div>
+
+<button id="btn_p" class="col-md-2 col-md-offset-2" type="button">prev</button>
+<button id="btn_n" class="col-md-2 col-md-offset-2" type="button">next</button>
+<div id="img_box" class=""></div>
 </body>
 </html>
