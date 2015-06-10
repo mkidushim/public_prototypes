@@ -9,7 +9,7 @@
 <script type="text/javascript">
 var current_img_index = 0;
 var img_array = [];
-var element_array = [];
+var dot_array = [];
 function load_files (){
 $.ajax({
             url: 'dir_listing.php',
@@ -50,6 +50,8 @@ function prev (){
     img_array[prev_image_index].css({left: '-100%'})
     img_array[current_img_index].animate({left: '100%'})
     img_array[prev_image_index].animate({left: "0%"})
+    dot_array[current_img_index].removeClass('active');
+    dot_array[prev_image_index].addClass('active');
     current_img_index= prev_image_index;
   /*
    var p = img_array.indexOf($('img').attr('src'));
@@ -73,6 +75,8 @@ function next () {
     img_array[next_image_index].css({left: '100%'})
     img_array[current_img_index].animate({left: '-100%'})
     img_array[next_image_index].animate({left: "0%"})
+    dot_array[current_img_index].removeClass('active');
+    dot_array[next_image_index].addClass('active');
     /*
 $('img').eq(current_img_index).removeClass('img_show')
 $('img').eq(current_img_index).addClass('img_hidden')
@@ -107,16 +111,20 @@ function intitialize (){
                 //img_array = img_array.concat(response.files);
                 for(var i = 0; i < response.files.length; i++){
                     //img_array.push(response.files[i]);
-
+                var dot = $('<p>',{
+                    class: 'dot',
+                }); 
                 var img = $('<img>',{
                     src: response.files[i],
                 }); 
                 if (i == 0) {
+                    dot.addClass('active')
                     img.addClass('img_shown')
                 }
                 $('#img_box').append(img)
-            
+                $('#dot_box').append(dot)
                 img_array.push(img);
+                dot_array.push(dot);
             }
             }
         })    
@@ -135,6 +143,16 @@ $(document).ready(function(){
 })
 </script>
 <style type="text/css">
+.dot {
+    border: 2px solid black;
+    display: inline-block;
+    border-radius: 100px;
+    height: 35px;
+    width: 35px;
+    margin:15px;
+    position: relative;
+    left: 500px;
+}
 #img_box {
     left: 18%;
     width: 800px;
@@ -153,6 +171,9 @@ top: 0;
     top: 0;
 
 }
+.active{
+background-color: black;
+}
 </style>
 </head>
 <body>
@@ -160,5 +181,6 @@ top: 0;
 <button id="btn_p" class="col-md-2 col-md-offset-2" type="button">prev</button>
 <button id="btn_n" class="col-md-2 col-md-offset-2" type="button">next</button>
 <div id="img_box" class=""></div>
+<div id="dot_box" class=""></div>
 </body>
 </html>
