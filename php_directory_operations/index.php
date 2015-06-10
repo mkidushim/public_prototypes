@@ -3,9 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<title></title>
 <script type="text/javascript">
 
+img_array = [];
 
 function load_files (){
 $.ajax({
@@ -15,6 +17,10 @@ $.ajax({
             cache: false,
             success: function(response) {
             	console.log(response);
+                for (var i = 0; i < img_array; i++){
+
+                }
+                
             }
         });
 }
@@ -22,13 +28,8 @@ $.ajax({
 </head>
 <body>
 <div id='img_container'>
-	<?php
-$img = glob("images/*.jpg");
-$output = [];
-foreach ($img as $key => $value) {
-	print("<img src=".$img[$key].">". "<br>");
-}
-?>
+<div id= 'img_box'> </div>
+	<button id="butn" type="button">update</button>
 	
 </div>
 </body>
