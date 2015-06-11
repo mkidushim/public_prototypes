@@ -6,24 +6,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<title></title>
 <script type="text/javascript">
-
-img_array = [];
-
-function load_files (){
-$.ajax({
-            url: 'dir_listing.php',
-            dataType: 'text',
-            method: 'GET',
-            cache: false,
-            success: function(response) {
-            	console.log(response);
-                for (var i = 0; i < img_array; i++){
-
-                }
-                
-            }
-        });
-}
 </script>
 </head>
 <body>
