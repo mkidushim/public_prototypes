@@ -10,11 +10,11 @@ session_start();
 	
 </head>
 <body>
-<form>
+<form action="logout.php">
 <input id="user" type="text" name="username">
 <input id="pass" type="password" name="password">
-<button id="btn" type="buton">login</button>
-<button id="btn2" type="buton">logout</button>
+<button id="btn" type="button">login</button>
+<button id="bt2" type="submit">logout</button>
 </form>
 <div id="todo">
 	
@@ -28,7 +28,7 @@ $(document).ready(function(){
 	$('form').on('click','#btn', function(){
 		console.log('btn works')
 		ajax_call();
-		
+		// add_todo_form();
 		
 	})
 
@@ -47,12 +47,25 @@ function ajax_call() {
 				if(response){
 					console.log('result is true',response)
 					console.log(response)
-					$('#todo').html('User_ID sign in:', response);
+					$('#todo').html('User_ID sign in:'+ response);
+					add_todo_form();
 				}
 				else {
 					console.log('error: ', response)
 					
 				}
+			}
+		});
+}
+function add_todo_form(){
+	$.ajax({
+			url: 'form.php',
+			method: 'POST',
+			dataType: 'text',
+			success: function(response){
+
+				console.log(response);
+				$('#todo').html(response);
 			}
 		});
 }
@@ -62,6 +75,7 @@ function ajax_logout() {
 			method: 'POST',
 			dataType: 'JSON',
 			success: function(response){
+
 				console.log(response);
 				if(response){
 					console.log('result is true',response)
