@@ -37,7 +37,7 @@ function ajax_call() {
 			dataType: 'JSON',
 			success: function(response){
 				if(response.success == true){
-					console.log('result is true',response)
+					console.log('result is true',response.success)
 				}
 				else if (response.success == false){
 					console.log('error: ', response.errors)
