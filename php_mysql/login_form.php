@@ -7,7 +7,7 @@ session_start();
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<title></title>
-	
+	<script src="final.js"></script>
 </head>
 <body>
 <form action="logout.php">
